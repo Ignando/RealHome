@@ -4,15 +4,108 @@
 {% block title %}RealHome - Home{% endblock %}
 
 {% block content %}
-<div class="main-content" role="main">
-    <h1 class="main-content__title">A Real Estate Listing Platform</h1>
-    <div class="search-container">
-        <input type="text" placeholder="Search"
-            class="search-container__input">
-        <button class="search-container__button">
-            <img src alt="Search"
-                class="search-container__button-icon">
-        </button>
+<div class="content-wrapper">
+    <div class="filters-container">
+        <h1>Filters</h1>
+        <form action method="get">
+            <div class="filter-section">
+                <h3>Price Range</h3>
+                <input type="number" name="min_price" placeholder="Min Price"
+                    min="0">
+                <input type="number" name="max_price" placeholder="Max Price"
+                    min="0">
+            </div>
+
+            <div class="filter-section">
+                <h3>Property Type</h3>
+                <label><input type="checkbox" name="property_type"
+                        value="house"> House</label>
+                <label><input type="checkbox" name="property_type"
+                        value="apartment"> Apartment</label>
+                <label><input type="checkbox" name="property_type"
+                        value="condo"> Condo</label>
+                <label><input type="checkbox" name="property_type"
+                        value="townhouse"> Townhouse</label>
+            </div>
+
+            <div class="filter-section">
+                <h3>Bedrooms</h3>
+                <select name="bedrooms">
+                    <option value>Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                    <option value="5">5+</option>
+                </select>
+            </div>
+
+            <div class="filter-section">
+                <h3>Bathrooms</h3>
+                <select name="bathrooms">
+                    <option value>Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                </select>
+            </div>
+
+            <div class="filter-section">
+                <h3>Area (sq ft)</h3>
+                <input type="number" name="min_area" placeholder="Min Area"
+                    min="0">
+                <input type="number" name="max_area" placeholder="Max Area"
+                    min="0">
+            </div>
+
+            <div class="filter-section">
+                <h3>Amenities</h3>
+                <label><input type="checkbox" name="amenities" value="parking">
+                    Parking</label>
+                <label><input type="checkbox" name="amenities" value="pool">
+                    Pool</label>
+                <label><input type="checkbox" name="amenities" value="garden">
+                    Garden</label>
+                <label><input type="checkbox" name="amenities" value="gym">
+                    Gym</label>
+            </div>
+
+            <div class="filter-section">
+                <h3>Year Built</h3>
+                <select name="year_built">
+                    <option value>Any</option>
+                    <option value="2020">2020+</option>
+                    <option value="2010">2010+</option>
+                    <option value="2000">2000+</option>
+                    <option value="1990">1990+</option>
+                    <option value="1980">1980+</option>
+                </select>
+            </div>
+
+            <button type="submit" class="apply-filters-btn">Apply
+                Filters</button>
+        </form>
+    </div>
+    <div class="grid-container">
+        {% for property in properties %}
+        <div class="grid-item">
+            {% if property.image %}
+            <img src="{{ property.image.url }}" alt="{{ property.title }}"
+                class="property-image">
+            {% else %}
+            <img src="{% static 'default-property-image.jpg' %}"
+                alt="Default Property Image" class="property-image">
+            {% endif %}
+            <h1 class="property-price">R{{ property.price }}</h1>
+            <p class="property-details">Bedrooms: {{ property.bedrooms }}</p>
+            <p class="property-address">{{ property.address }}</p>
+            <a href="{% url 'details' property.id %}"
+                class="property-button">View
+                Details</a>
+        </div>
+        {% endfor %}
+
     </div>
 </div>
 {% endblock %}

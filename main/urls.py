@@ -13,4 +13,5 @@ urlpatterns = [
     path('contact-us/', views.contactUs, name='contactUs'),
     path('cookies/', views.contactUs, name='cookies'),
     path('privacy-policy/', views.privacyPolicy, name='privacy'),
+    path('search/', views.search, name='search'), 
 ]

@@ -111,11 +111,6 @@ def register_view(request):
     # This line should never be reached due to @require_http_methods, but keep it for completeness
     return JsonResponse({'success': False, 'message': 'Invalid request method'}, status=405)
 
-# Logout View
-def logout_view(request):
-    logout(request)
-    messages.info(request, "You have successfully logged out.")
-    return redirect('home')
 
 # Dashboard View
 @login_required

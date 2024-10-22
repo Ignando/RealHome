@@ -29,3 +29,6 @@ class CustomUser(AbstractUser):
         related_name='customuser_set',
         related_query_name='customuser',
     )
+
+    def __str__(self):
+        return self.username

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content-wrapper">
+    <h1>Search Results</h1>
+    
+    <div class="search-criteria">
+        <h2>Search Criteria:</h2>
+        <p>Query: {{ query }}</p>
+        <p>Listing Type: {{ listing_type|default:"All" }}</p>
+        <p>Price Range: {% if min_price %}${{ min_price }}{% endif %} - {% if max_price %}${{ max_price }}{% endif %}</p>
+        <p>Minimum Bedrooms: {{ bedrooms|default:"Any" }}</p>
+        <p>Minimum Bathrooms: {{ bathrooms|default:"Any" }}</p>
+    </div>
+
+    <div class="grid-container">
+        {% for property in properties %}
+        <div class="grid-item">
+            {% if property.image %}
+            <img src="{{ property.image.url }}" alt="{{ property.address }}" class="property-image">
+            {% else %}
+            <img src="{% static 'images/default-property-image.jpg' %}" alt="Default Property Image" class="property-image">
+            {% endif %}
+            
+            <h2 class="property-price">${{ property.price|floatformat:0 }}</h2>
+            <p>{{ property.bedrooms }} bd | {{ property.bathrooms }} ba | {{ property.square_meters }} sqm</p>
+            <p>{{ property.address }}</p>
+            <a href="{% url 'details' property.id %}" class="property-button">View Details</a>
+        </div>
+        {% empty %}
+        <p>No properties found matching your search criteria.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
