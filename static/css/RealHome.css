@@ -2,10 +2,17 @@
 body {
     background-color: white;
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0; 
     padding: 0;
 }
-
+/* Contact-us */
+.contact-us {
+    padding: 0% 20%;
+}
+/* About Us */
+.about-us {
+    padding-left: 20%;
+}
 /* Header Styles */
 .header {
     background-color: white;
@@ -486,10 +493,9 @@ body {
 }
 
 /* Policy pages */
-.policies {
-    font-size: small;
-    background-color: #4d4d4d;
-    margin: 20px 20px 20px 20px;
+.terms-conditions {
+    padding: 0% 10%;
+    background-color: #e0e0e0;
 }
 
 /* sell page */
