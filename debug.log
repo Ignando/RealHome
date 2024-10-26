@@ -805,3 +805,9 @@ Traceback (most recent call last):
     raise TemplateSyntaxError(
 django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'content' appears more than once
 WARNING 2024-10-14 14:26:58,737 log Not Found: /favicon.ico
+INFO 2024-10-23 14:44:03,753 autoreload Watching for file changes with StatReloader
+WARNING 2024-10-23 14:45:08,081 log Not Found: /accounts/login/
+WARNING 2024-10-23 14:45:13,867 log Not Found: /accounts/login/
+WARNING 2024-10-23 14:46:23,174 log Not Found: /accounts/login/
+INFO 2024-10-24 13:53:23,353 autoreload Watching for file changes with StatReloader
+WARNING 2024-10-24 13:53:45,248 log Not Found: /accounts/login/
