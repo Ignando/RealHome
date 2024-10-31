@@ -1238,3 +1238,7 @@ django.db.utils.OperationalError: no such column: main_property.realtor_id
 INFO 2024-10-30 16:04:14,051 autoreload Watching for file changes with StatReloader
 INFO 2024-10-30 17:42:42,316 views Login attempt for username: Wian@gmail.com
 INFO 2024-10-30 17:42:42,669 views Successful login for username: Wian@gmail.com
+INFO 2024-10-31 14:41:57,598 autoreload Watching for file changes with StatReloader
+INFO 2024-10-31 14:42:33,730 views Registration attempt with data: <QueryDict: {'csrfmiddlewaretoken': ['Sz6FY6JVlm7QwrBch0FMWyc9GHl7rvoCSKRTRv9waFU5ARYUyR9El0A45BFEm9Qu'], 'name': ['Ignatius Doyer'], 'email': ['aweawe@gmail.com'], 'password': ['2002'], 'phone': ['0786896602'], 'userType': ['customer'], 'licenseNumber': ['']}>
+WARNING 2024-10-31 14:42:33,732 log Bad Request: /auth/register/
+INFO 2024-10-31 14:42:43,208 views Registration attempt with data: <QueryDict: {'csrfmiddlewaretoken': ['Sz6FY6JVlm7QwrBch0FMWyc9GHl7rvoCSKRTRv9waFU5ARYUyR9El0A45BFEm9Qu'], 'name': ['Ignatius Doyer'], 'email': ['aweawe123@gmail.com'], 'password': ['2002'], 'phone': ['0786896602'], 'userType': ['customer'], 'licenseNumber': ['']}>
