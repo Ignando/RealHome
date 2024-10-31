@@ -175,5 +175,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['realhome-7u4j.onrender.com']
+ALLOWED_HOSTS = ['realhome-8sok.onrender.com']
 
